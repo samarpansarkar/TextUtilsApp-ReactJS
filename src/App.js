@@ -1,26 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import TextForm from './components/TextForm';
 
 function App() {
   return (
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" herf="/">TextUtils</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" herf="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" herf="/">Features</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      <><Navbar />
+      <div className="container"><TextForm /></div></>
   );
 }
 
