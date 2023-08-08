@@ -16,6 +16,12 @@ export default function TextForm(props) {
     console.log("Clear button was clicked");
     setText('')
   }
+  const handleCopyClick = () =>{
+    var text = document.getElementById("myBox");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+  }
+
   
   const handleOnChange = (event) =>{
     setText(event.target.value)
@@ -28,12 +34,13 @@ export default function TextForm(props) {
     <div className="container">
       <h1>{props.heading}</h1>
         <div className="mb-3">
-            <textarea className="from-control" value={text} onChange={handleOnChange} id='myBox' rows = '2' ></textarea>
+            <textarea className="from-control" value={text} onChange={handleOnChange} id='myBox' rows = '10' cols='50'></textarea>
             
         </div>
         <button type="submit" className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
         <button type="submit" className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
         <button type="submit" className="btn btn-primary mx-2" onClick={handleClearClick}>Clear Text</button>
+        <button type="submit" className="btn btn-primary mx-2" onClick={handleCopyClick}>Copy Text</button>
     </div>
     <div className="container my-5">
       <h1>Your text summary</h1>
