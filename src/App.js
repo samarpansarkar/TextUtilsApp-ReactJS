@@ -6,6 +6,7 @@ import React, { useState, useSyncExternalStore } from 'react'
 
 function App() {
   const [mode, setmode] = useState("light");
+
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type)=>{
@@ -31,7 +32,7 @@ function App() {
   }
   return (
     <>
-      <Navbar mode = {mode} toggleMode={toggleMode} />
+      <Navbar mode={mode} toggleMode={toggleMode}/>
 
       <Alert alert = {alert}/>
 
