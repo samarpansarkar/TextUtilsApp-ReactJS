@@ -6,20 +6,22 @@ import About from "./components/About";
 import React, { useState } from 'react'
 
 function App() {
-  const [mode, setmode] = useState("dark");
+  const [mode, setmode] = useState("light");
 
   const toggleMode = ()=>{
-    if(mode === 'dark'){
-      setmode('light');
-    }else{
+    if(mode === 'light'){
       setmode('dark');
+      document.body.style.backgroundColor = '#343a40';
+    }else{
+      setmode('light');
+      document.body.style.backgroundColor = 'white';
     }
   }
   return (
     <>
       <Navbar mode = {mode} toggleMode={toggleMode} />
       <div className="container my-3">
-        <TextForm heading="Enter text below" />
+        <TextForm heading="Enter text below" mode = {mode} />
         {/* <About my-1 /> */}
       </div>
     </>

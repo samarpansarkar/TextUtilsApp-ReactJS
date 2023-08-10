@@ -31,23 +31,23 @@ export default function TextForm(props) {
 
   return (
     <>
-    <div className="container">
+    <div className="container" style={{color:props.mode==='dark'?'white':'dark'}}>
       <h1>{props.heading}</h1>
         <div className="mb-3">
-            <textarea className="from-control" value={text} onChange={handleOnChange} id='myBox' rows = '10' cols='50'></textarea>
+            <textarea className="from-control" value={text} style={{backgroundColor:props.mode==='dark'?'#343a40':'white',color:props.mode==='dark'?'white':'dark'}} onChange={handleOnChange} id='myBox' rows = '10' cols='50'></textarea>
             
         </div>
         <button type="submit" className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
         <button type="submit" className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
         <button type="submit" className="btn btn-primary mx-2" onClick={handleClearClick}>Clear Text</button>
         <button type="submit" className="btn btn-primary mx-2" onClick={handleCopyClick}>Copy Text</button>
-    </div>
-    <div className="container my-5">
+    <div className='container' style={{color:props.mode==='light'?'dark':'light'}}>
       <h1>Your text summary</h1>
       <p>{text.split(" ").length} words and {text.length} characters. </p>
       <p>{0.008 * text.split(" ").length} Minutes read!</p>
       <h2>Preview</h2>
       <p>{text}</p>
+    </div>
     </div>
     </>
   )
